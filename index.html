@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalzang — Program Manager</title>
+<meta name="description" content="Kalzang — a program manager from Gangtok, Sikkim, building the bridge between technical and non-technical teams. Plus a few cute games to play.">
+<script>
+  // Redirect www.kalzang.com -> kalzang.com (apex), preserving path, query and hash.
+  (function () {
+    if (location.hostname === 'www.kalzang.com') {
+      location.replace('https://kalzang.com' + location.pathname + location.search + location.hash);
+    }
+  })();
+</script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="siteNav">
+  <div class="wrap">
+    <a class="logo" href="index.html">Kalzang<span class="dot">✦</span></a>
+    <ul class="navlinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#toolkit">Toolkit</a></li>
+      <li><a href="#play">Play</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">● Program Manager · Gangtok, Sikkim</span>
+      <h1>Hi, I'm Kalzang ✨</h1>
+      <p class="tagline">I build the bridge between the people who write the code and the people who need it to work.</p>
+      <p class="sub">Part translator, part planner, part nag-with-a-spreadsheet. I turn fuzzy asks into roadmaps engineering can build from — and turn engineering tradeoffs into decisions anyone can make confidently.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">See the work →</a>
+        <a href="about.html" class="btn btn-secondary">About me</a>
+      </div>
+    </div>
+
+    <!-- Bridge illustration: signature element -->
+    <div class="bridge-wrap reveal">
+      <svg viewBox="0 0 800 300" width="100%" role="img" aria-label="Illustration of a rope bridge strung with prayer flags, connecting a cliff with engineering icons to a cliff with people and communication icons, with a small figure crossing in the middle.">
+        <!-- left cliff -->
+        <polygon points="0,300 0,150 55,128 125,158 195,138 222,182 222,300" fill="var(--rock)"></polygon>
+        <polygon points="0,300 0,150 55,128 90,140 70,158 222,300" fill="var(--rock-dark)" opacity="0.5"></polygon>
+        <!-- left cliff icons: terminal -->
+        <g transform="translate(58,86)">
+          <rect x="0" y="0" width="64" height="46" rx="8" fill="#fff" stroke="var(--ink)" stroke-width="2"></rect>
+          <circle cx="10" cy="10" r="2.4" fill="var(--flame)"></circle>
+          <circle cx="18" cy="10" r="2.4" fill="var(--marigold)"></circle>
+          <circle cx="26" cy="10" r="2.4" fill="var(--moss)"></circle>
+          <line x1="8" y1="22" x2="40" y2="22" stroke="var(--sky)" stroke-width="2.4" stroke-linecap="round"></line>
+          <line x1="8" y1="30" x2="52" y2="30" stroke="var(--ink-soft)" stroke-width="2.4" stroke-linecap="round"></line>
+          <line x1="8" y1="38" x2="30" y2="38" stroke="var(--ink-soft)" stroke-width="2.4" stroke-linecap="round"></line>
+        </g>
+        <!-- left cliff icon: gear -->
+        <g transform="translate(150,100)">
+          <circle r="15" fill="#fff" stroke="var(--ink)" stroke-width="2"></circle>
+          <circle r="6" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+          <g stroke="var(--ink)" stroke-width="3" stroke-linecap="round">
+            <line x1="0" y1="-15" x2="0" y2="-21"></line>
+            <line x1="0" y1="15" x2="0" y2="21"></line>
+            <line x1="-15" y1="0" x2="-21" y2="0"></line>
+            <line x1="15" y1="0" x2="21" y2="0"></line>
+            <line x1="-10.6" y1="-10.6" x2="-14.8" y2="-14.8"></line>
+            <line x1="10.6" y1="10.6" x2="14.8" y2="14.8"></line>
+            <line x1="-10.6" y1="10.6" x2="-14.8" y2="14.8"></line>
+            <line x1="10.6" y1="-10.6" x2="14.8" y2="-14.8"></line>
+          </g>
+        </g>
+
+        <!-- right cliff -->
+        <polygon points="800,300 800,150 745,128 675,158 605,138 578,182 578,300" fill="var(--rock)"></polygon>
+        <polygon points="800,300 800,150 745,128 710,140 730,158 578,300" fill="var(--rock-dark)" opacity="0.5"></polygon>
+        <!-- right cliff icon: chat bubble -->
+        <g transform="translate(612,82)">
+          <rect x="0" y="0" width="62" height="42" rx="14" fill="#fff" stroke="var(--ink)" stroke-width="2"></rect>
+          <polygon points="14,42 24,42 14,54" fill="#fff" stroke="var(--ink)" stroke-width="2"></polygon>
+          <circle cx="16" cy="21" r="3" fill="var(--sky)"></circle>
+          <circle cx="31" cy="21" r="3" fill="var(--sky)"></circle>
+          <circle cx="46" cy="21" r="3" fill="var(--sky)"></circle>
+        </g>
+        <!-- right cliff icon: calendar -->
+        <g transform="translate(700,104)">
+          <rect x="0" y="0" width="36" height="32" rx="5" fill="#fff" stroke="var(--ink)" stroke-width="2"></rect>
+          <line x1="0" y1="11" x2="36" y2="11" stroke="var(--ink)" stroke-width="2"></line>
+          <line x1="9" y1="-4" x2="9" y2="4" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="27" y1="-4" x2="27" y2="4" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"></line>
+          <rect x="7" y="17" width="6" height="6" fill="var(--marigold)"></rect>
+          <rect x="22" y="17" width="6" height="6" fill="var(--moss)"></rect>
+        </g>
+
+        <!-- bridge ropes -->
+        <path d="M222,182 Q400,236 578,182" fill="none" stroke="var(--ink)" stroke-width="3" opacity="0.55"></path>
+        <path d="M222,172 Q400,224 578,172" fill="none" stroke="var(--ink)" stroke-width="3" opacity="0.35"></path>
+
+        <!-- planks -->
+        <g stroke="var(--ink)" stroke-width="3" stroke-linecap="round" opacity="0.7">
+          <line x1="252" y1="180" x2="252" y2="192"></line>
+          <line x1="292" y1="195" x2="292" y2="207"></line>
+          <line x1="332" y1="204" x2="332" y2="216"></line>
+          <line x1="372" y1="209" x2="372" y2="221"></line>
+          <line x1="412" y1="209" x2="412" y2="221"></line>
+          <line x1="452" y1="204" x2="452" y2="216"></line>
+          <line x1="492" y1="195" x2="492" y2="207"></line>
+          <line x1="532" y1="180" x2="532" y2="192"></line>
+        </g>
+
+        <!-- hanging flags (prayer-flag bunting) -->
+        <g>
+          <g class="flag" transform="translate(252,168)"><polygon points="-7,0 7,0 0,16" fill="var(--sky)"></polygon></g>
+          <g class="flag" transform="translate(292,182)"><polygon points="-7,0 7,0 0,16" fill="#fff" stroke="var(--mist)"></polygon></g>
+          <g class="flag" transform="translate(332,191)"><polygon points="-7,0 7,0 0,16" fill="var(--flame)"></polygon></g>
+          <g class="flag" transform="translate(372,196)"><polygon points="-7,0 7,0 0,16" fill="var(--moss)"></polygon></g>
+          <g class="flag" transform="translate(412,196)"><polygon points="-7,0 7,0 0,16" fill="var(--marigold)"></polygon></g>
+          <g class="flag" transform="translate(452,191)"><polygon points="-7,0 7,0 0,16" fill="var(--sky)"></polygon></g>
+          <g class="flag" transform="translate(492,182)"><polygon points="-7,0 7,0 0,16" fill="var(--flame)"></polygon></g>
+          <g class="flag" transform="translate(532,168)"><polygon points="-7,0 7,0 0,16" fill="var(--moss)"></polygon></g>
+        </g>
+
+        <!-- figure crossing -->
+        <g class="figure" transform="translate(400,196)">
+          <circle cx="0" cy="-8" r="8" fill="#fff" stroke="var(--ink)" stroke-width="2.5"></circle>
+          <path d="M-9,18 C-9,2 9,2 9,18 Z" fill="var(--marigold)" stroke="var(--ink)" stroke-width="2"></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- BUNTING DIVIDER -->
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--sky)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--flame)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--marigold)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--sky)"></polygon>
+  </svg>
+</div>
+
+<!-- WHAT I DO -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I do</span>
+      <h2>Three jobs in one title</h2>
+      <p>A program manager who sits between teams doesn't have one job — she has three, all at once.</p>
+    </div>
+    <div class="do-grid">
+      <div class="do-card reveal">
+        <div class="icon-badge" style="background:var(--cloud); color:var(--sky);">⌥</div>
+        <h3>Translate</h3>
+        <p>Turn a fuzzy ask from leadership or a client into a spec an engineer can actually build from — no guessing, no scope creep mid-sprint.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="icon-badge" style="background:#FBF0DD; color:var(--marigold);">◐</div>
+        <h3>Align</h3>
+        <p>Turn a technical tradeoff into a decision a non-technical stakeholder can make confidently — without dumbing it down or sitting through a deck.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="icon-badge" style="background:#E9F4EE; color:var(--moss);">▣</div>
+        <h3>Ship</h3>
+        <p>Run the unglamorous cadence — planning, standups, risk logs, retros — that turns "we should build that" into something that's actually live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--moss)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--sky)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--flame)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--marigold)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--moss)"></polygon>
+  </svg>
+</div>
+
+<!-- CASE STUDIES -->
+<section id="case-studies" style="background:var(--cloud);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>Case studies</h2>
+      <p>A quick look at the kind of fuzzy-to-shipped problems I like living in.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-tags"><span class="tag">0→1 PRODUCT</span><span class="tag">6 WEEKS</span></div>
+        <h3>Turning a vague "build something with AI" into a shipped v1</h3>
+        <div class="case-row"><b>The ask</b><span>Leadership wanted "something with AI" — no spec, no defined scope, a hard deadline.</span></div>
+        <div class="case-row"><b>What I did</b><span>Ran structured discovery with engineering and stakeholders, wrote the spec, and negotiated the scope cuts engineering could actually hit in six weeks.</span></div>
+        <div class="case-row"><b>What shipped</b><span>A working v1, signed off by both the technical team and the business side, on the original deadline.</span></div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-tags"><span class="tag">STAKEHOLDER MGMT</span><span class="tag">CROSS-FUNCTIONAL</span></div>
+        <h3>Explaining a technical tradeoff to a non-technical board</h3>
+        <div class="case-row"><b>The ask</b><span>Engineering wanted time for tech debt; the board wanted visible feature progress. Neither side was speaking the other's language.</span></div>
+        <div class="case-row"><b>What I did</b><span>Translated the tradeoff into a risk timeline the board could act on, without engineering jargon.</span></div>
+        <div class="case-row"><b>What shipped</b><span>A phased plan the board approved, that protected both the roadmap and system stability.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section id="toolkit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How I work</span>
+      <h2>The toolkit</h2>
+      <p>Less "skills list," more "what's actually open in my browser on a Tuesday."</p>
+    </div>
+    <div class="pill-cloud reveal">
+      <span class="pill c1">Roadmapping</span>
+      <span class="pill c2">Sprint facilitation</span>
+      <span class="pill c3">Stakeholder management</span>
+      <span class="pill c4">Risk registers</span>
+      <span class="pill c1">Jira / Linear</span>
+      <span class="pill c2">Notion</span>
+      <span class="pill c3">Figma (read-only superpowers)</span>
+      <span class="pill c4">Basic SQL</span>
+      <span class="pill c1">Cross-functional comms</span>
+      <span class="pill c2">Retrospectives</span>
+      <span class="pill c3">Spec writing</span>
+      <span class="pill c4">Prioritization frameworks</span>
+    </div>
+  </div>
+</section>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--flame)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--marigold)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--sky)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--flame)"></polygon>
+  </svg>
+</div>
+
+<!-- PLAY -->
+<section id="play" style="background:var(--cloud);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Take a break</span>
+      <h2>Got a minute? Play a round. 🎮</h2>
+      <p>A few tiny games that borrow from the day job: timing, translation, and surviving a chaotic sprint.</p>
+    </div>
+    <div class="game-grid">
+
+      <!-- GAME 1: bridge timing game -->
+      <div class="game-card reveal">
+        <span class="eyebrow">Mini game · timing</span>
+        <h3>Cross the bridge</h3>
+        <p class="game-desc">Click "Lay plank" when the marker hits the green zone. Three misses and you start over — get all 8 planks down to cross.</p>
+        <div class="bg-track" id="bgTrack">
+          <div class="bg-zone" id="bgZone"></div>
+          <div class="bg-marker" id="bgMarker"></div>
+        </div>
+        <div class="bg-dots" id="bgDots"></div>
+        <div class="bg-status" id="bgStatus">Lives: ❤❤❤ · Planks: 0/8</div>
+        <button class="btn btn-primary" id="bgPlay" type="button">Lay plank</button>
+        <button class="btn btn-secondary" id="bgReset" type="button" style="display:none;">Play again</button>
+      </div>
+
+      <!-- GAME 2: memory matching game -->
+      <div class="game-card reveal">
+        <span class="eyebrow">Mini game · translation</span>
+        <h3>Spec it!</h3>
+        <p class="game-desc">Match every vague ask to the spec it actually needs. Find all 6 pairs in as few moves as you can.</p>
+        <div class="mem-stats" id="memStats">Moves: 0</div>
+        <div class="mem-grid" id="memGrid"></div>
+        <button class="btn btn-secondary" id="memReset" type="button" style="margin-top:14px;">Reshuffle</button>
+      </div>
+
+    </div>
+
+    <!-- GAME 3: backlog arcade (full width) -->
+    <div class="game-card reveal" style="margin-top:22px;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <span class="eyebrow" style="justify-content:center;">Mini game · arcade</span>
+        <h3>Kalzang's Backlog Arcade 👾</h3>
+        <p class="game-desc" style="max-width:460px; margin:8px auto 0;">Survive a chaotic product cycle: catch the good stuff (features, clear specs, boba) and dodge scope creep &amp; prod bugs. Ship at 100 velocity before morale hits zero.</p>
+      </div>
+
+      <div class="arcade-wrap">
+        <div class="arcade-frame">
+          <div class="arcade-hud">
+            <div>🚀 VELOCITY: <b class="score" id="arScore">0</b>/100</div>
+            <div>💖 MORALE: <b class="morale" id="arMorale">100</b>%</div>
+          </div>
+          <div class="arcade-stage" id="arStage">
+            <div class="arcade-overlay" id="arOverlay">
+              <span class="big">🎮</span>
+              <h4>Sprint Delivery Simulator</h4>
+              <p>Use the ← → arrow keys or the buttons below to move your backlog basket. Catch features, dodge bugs!</p>
+              <button class="btn btn-primary" id="arStart" type="button">Start sprint</button>
+            </div>
+            <div class="arcade-basket" id="arBasket" style="left:50%;"><span>BACKLOG</span></div>
+          </div>
+          <div class="arcade-controls">
+            <button type="button" id="arLeft" aria-label="Move left">⬅️ Left</button>
+            <button type="button" id="arRight" aria-label="Move right">Right ➡️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:26px;">
+      <a href="about.html#play" class="btn btn-secondary">More tiny games on the About page →</a>
+    </p>
+  </div>
+</section>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--sky)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--moss)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--flame)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--marigold)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--sky)"></polygon>
+  </svg>
+</div>
+
+<!-- NOTES -->
+<section id="notes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notes</span>
+      <h2>From the field</h2>
+      <p>Short, practical write-ups on the PM craft. More coming soon.</p>
+    </div>
+    <div class="notes-grid">
+      <div class="note-card reveal">
+        <span class="date">Draft</span>
+        <h3>Lessons from translating a sprint plan for a non-technical board</h3>
+        <span class="note-status">Coming soon</span>
+      </div>
+      <div class="note-card reveal">
+        <span class="date">Draft</span>
+        <h3>Why I write specs like user stories, not requirements docs</h3>
+        <span class="note-status">Coming soon</span>
+      </div>
+      <div class="note-card reveal">
+        <span class="date">Draft</span>
+        <h3>The PM's job is mostly vocabulary</h3>
+        <span class="note-status">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <span class="eyebrow" style="color:var(--marigold);">Say hello</span>
+        <h2 style="margin-top:10px;">Let's talk about your next build.</h2>
+        <p>Open to program management roles and consulting — especially teams that need someone fluent in both engineering and everyone else.</p>
+        <a href="mailto:kalzang@example.com" class="btn btn-primary" style="margin-top:18px;">kalzang@example.com</a>
+      </div>
+      <div class="foot-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Resume (PDF)</a>
+        <a href="#">Twitter / X</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Kalzang — Program Manager, Gangtok, Sikkim</span>
+      <span>Built with care, somewhere between a mountain and a sprint board. 🌸</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CUTE STICKER -->
+<div class="sticker" id="sticker">
+  <span>🐼</span>
+  <span>Remember to document your decisions!</span>
+  <button class="x" id="stickerClose" aria-label="Dismiss note">×</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

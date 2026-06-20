@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Kalzang</title>
+<meta name="description" content="About Kalzang — a program manager from Gangtok, Sikkim, bridging technical and non-technical teams. With a translation station and a few more cute games.">
+<script>
+  // Redirect www.kalzang.com -> kalzang.com (apex), preserving path, query and hash.
+  (function () {
+    if (location.hostname === 'www.kalzang.com') {
+      location.replace('https://kalzang.com' + location.pathname + location.search + location.hash);
+    }
+  })();
+</script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="siteNav">
+  <div class="wrap">
+    <a class="logo" href="index.html">Kalzang<span class="dot">✦</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#play">Play</a></li>
+      <li><a href="index.html#notes">Notes</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ABOUT HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">● About · Gangtok, Sikkim</span>
+    <h1 style="margin-top:14px;">A little about me 🌸</h1>
+    <p class="tagline">Program manager by title, translator by trade, and a collector of cute stationery on the side.</p>
+  </div>
+</header>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--sky)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--flame)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--marigold)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--sky)"></polygon>
+  </svg>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="avatar">K</div>
+      <div class="pin">⛰ Gangtok, Sikkim</div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">My story</span>
+      <h2 style="margin-top:10px;">Hi, I'm Kalzang 👋</h2>
+      <p>I'm a program manager who lives in the space between spreadsheets and sprint boards — between what engineers can build and what stakeholders actually need. My job is to make that space feel less like a gap and more like a bridge.</p>
+      <p>Originally from <strong>Gangtok, Sikkim</strong>, I grew up around a place where the line between two very different worlds — mountain and valley, old and new — was something you crossed every day without thinking about it. That's more or less the job now: finding clarity in complexity, and making sure the bridge between technical and non-technical teams feels like a conversation, not a negotiation.</p>
+      <p>I care about good pedagogy, good UX, and never letting the "why" behind a product get lost in execution. Off the clock you'll find me in a cozy café with a milky tea, hoarding cute notebooks I'll absolutely use one day, and reorganizing a Notion workspace purely for fun.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section style="background:var(--cloud); padding-top:40px;">
+  <div class="wrap">
+    <div class="fact-grid">
+      <div class="fact-card reveal">
+        <h3><span>☕</span> Currently</h3>
+        <ul>
+          <li>Reading: Atomic Habits</li>
+          <li>Learning: AI product management</li>
+          <li>Mood: Calm &amp; planning</li>
+        </ul>
+      </div>
+      <div class="fact-card reveal">
+        <h3><span>🌸</span> Personal philosophy</h3>
+        <p>Kindness, clarity, and reliable execution build stronger teams than unnecessary complexity ever will.</p>
+      </div>
+      <div class="fact-card reveal">
+        <h3><span>🧭</span> What I'm great at</h3>
+        <p>Taking a tense, jargon-heavy room and leaving everyone aligned on one plan they actually believe in.</p>
+      </div>
+      <div class="fact-card reveal">
+        <h3><span>🎀</span> Little joys</h3>
+        <p>Pastel sticky notes, a clean backlog, mountain mornings, and a game that loads in under a second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--moss)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--sky)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--flame)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--marigold)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--moss)"></polygon>
+  </svg>
+</div>
+
+<!-- TRANSLATION STATION -->
+<section id="bridge">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:680px;">
+      <span class="eyebrow">The bridge, live</span>
+      <h2>The Translation Station</h2>
+      <p>This is the heart of what I do — the same project, told two ways. Flip the switch to see how I translate between engineer-speak and human-speak.</p>
+      <div class="ts-toggle" role="group" aria-label="Toggle description language">
+        <button id="tsHuman" class="active" type="button">🧸 Human speak</button>
+        <button id="tsTech" class="tech" type="button">👩‍💻 Engineer speak</button>
+      </div>
+    </div>
+    <div class="ts-list" id="tsList"></div>
+  </div>
+</section>
+
+<div class="bunting" aria-hidden="true">
+  <svg width="220" height="26" viewBox="0 0 220 26">
+    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
+    <polygon points="20,8 30,8 25,18" fill="var(--flame)"></polygon>
+    <polygon points="60,14 70,14 65,24" fill="var(--marigold)"></polygon>
+    <polygon points="100,17 110,17 105,27" fill="var(--sky)"></polygon>
+    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
+    <polygon points="180,8 190,8 185,18" fill="var(--flame)"></polygon>
+  </svg>
+</div>
+
+<!-- MINI GAMES -->
+<section id="play" style="background:var(--cloud);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Take a break</span>
+      <h2>A few more tiny games 🌼</h2>
+      <p>Quick, silly, and surprisingly on-brand. No score, no pressure — just stay a while.</p>
+    </div>
+    <div class="game-grid" style="grid-template-columns:repeat(3,1fr);">
+
+      <div class="game-card reveal">
+        <span class="eyebrow">☁️ guessing</span>
+        <h3>Guess my priority</h3>
+        <p class="game-desc">Type what you think every PM secretly optimizes for.</p>
+        <input class="fun-input" id="prioInput" placeholder="e.g. communication" autocomplete="off">
+        <button class="btn btn-primary" id="prioBtn" type="button">Guess</button>
+        <div class="fun-out" id="prioOut"></div>
+      </div>
+
+      <div class="game-card reveal">
+        <span class="eyebrow">🌸 fortune</span>
+        <h3>Fortune petal</h3>
+        <p class="game-desc">Click for a tiny work mantra to carry into your next meeting.</p>
+        <button class="btn btn-primary" id="petalBtn" type="button">Reveal a petal</button>
+        <div class="fun-out" id="petalOut"></div>
+      </div>
+
+      <div class="game-card reveal">
+        <span class="eyebrow">🧩 translator</span>
+        <h3>Stakeholder translator</h3>
+        <p class="game-desc">Turn engineer-speak into business-speak, one click at a time.</p>
+        <button class="btn btn-primary" id="transBtn" type="button">Translate</button>
+        <div class="fun-out" id="transOut"></div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:26px;">
+      <a href="index.html#play" class="btn btn-secondary">← Back to the arcade games</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <span class="eyebrow" style="color:var(--marigold);">Say hello</span>
+        <h2 style="margin-top:10px;">Let's build a bridge together.</h2>
+        <p>Open to program management roles and consulting — especially teams that need someone fluent in both engineering and everyone else.</p>
+        <a href="mailto:kalzang@example.com" class="btn btn-primary" style="margin-top:18px;">kalzang@example.com</a>
+      </div>
+      <div class="foot-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">Resume (PDF)</a>
+        <a href="#">Twitter / X</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Kalzang — Program Manager, Gangtok, Sikkim</span>
+      <span>Made with 🧋 from Gangtok to the tech world.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CUTE STICKER -->
+<div class="sticker" id="sticker">
+  <span>🐼</span>
+  <span>Alignment beats heroics. Take a breath.</span>
+  <button class="x" id="stickerClose" aria-label="Dismiss note">×</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
