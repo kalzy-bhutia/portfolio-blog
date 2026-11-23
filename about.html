@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="about">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Kalzang</title>
-<meta name="description" content="About Kalzang — a program manager from Gangtok, Sikkim, bridging technical and non-technical teams. With a translation station and a few more cute games.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Kalzang</title>
+<meta name="description" content="About Kalzang, a senior product manager at Microsoft in Bengaluru, from Gangtok, Sikkim, bridging technical and non-technical teams. With a translation station and a few more cute games.">
+<link rel="canonical" href="https://kalzang.com/about.html">
+<meta name="theme-color" content="#F6F3EE">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Kalzang">
+<meta property="og:url" content="https://kalzang.com/about.html">
+<meta property="og:title" content="About · Kalzang">
+<meta property="og:description" content="Product manager by title, translator by trade, and a collector of cute stationery on the side.">
+<meta property="og:image" content="https://kalzang.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kalzang, with soft clay building blocks joined into a bridge.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About · Kalzang">
+<meta name="twitter:description" content="Product manager by title, translator by trade, and a collector of cute stationery on the side.">
+<meta name="twitter:image" content="https://kalzang.com/assets/og.png">
 <script>
   // Redirect www.kalzang.com -> kalzang.com (apex), preserving path, query and hash.
   (function () {
@@ -13,204 +28,217 @@
     }
   })();
 </script>
+<script>
+  // Motion flag, set before first paint (see index.html for the full note).
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    d.classList.add('motion');
+    setTimeout(function () { if (!window.__kReady) d.classList.remove('motion'); }, 3000);
+  })();
+</script>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="styles.css">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/games.css">
+<script type="module" src="js/main.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav id="siteNav">
+<nav class="site-nav" id="siteNav" aria-label="Main">
   <div class="wrap">
-    <a class="logo" href="index.html">Kalzang<span class="dot">✦</span></a>
-    <ul class="navlinks">
-      <li><a href="index.html#work">Work</a></li>
-      <li><a href="index.html#toolkit">Toolkit</a></li>
-      <li><a href="index.html#play">Play</a></li>
-      <li><a href="index.html#notes">Notes</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Kalzang</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span></span>Menu
     </button>
+    <ul class="navlinks" id="navLinks">
+      <li><a class="ink-link" href="index.html#work">Work</a></li>
+      <li><a class="ink-link" href="index.html#toolkit">Toolkit</a></li>
+      <li><a class="ink-link" href="index.html#play">Play</a></li>
+      <li><a class="ink-link" href="index.html#notes">Notes</a></li>
+      <li><a class="ink-link" href="about.html" aria-current="page">About</a></li>
+      <li><a class="ink-link" href="index.html#contact">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
-<!-- ABOUT HERO -->
-<header class="hero">
+<main id="main">
+
+<!-- ================= ABOUT HERO ================= -->
+<header class="about-hero">
+  <div class="wrap about-hero-grid">
+    <div class="about-hero-copy">
+      <p class="status-pill"><span class="dot" aria-hidden="true"></span>About · Gangtok, Sikkim</p>
+      <h1>A little about me</h1>
+      <p class="tagline">Product manager by title, translator by trade, and a collector of cute stationery on the side.</p>
+    </div>
+    <!-- Portrait slot. TODO(owner): add a real photo as
+         <img src="assets/kalzang.webp" alt="Kalzang" width="720" height="900">
+         inside .portrait-frame, replacing the initial. Never use a generated image. -->
+    <figure class="portrait" aria-label="Portrait placeholder">
+      <span class="portrait-block portrait-block--a" aria-hidden="true"></span>
+      <div class="portrait-frame"><span class="portrait-initial" aria-hidden="true">K</span></div>
+      <span class="portrait-block portrait-block--b" aria-hidden="true"></span>
+      <span class="portrait-block portrait-block--c" aria-hidden="true"></span>
+    </figure>
+  </div>
   <div class="wrap">
-    <span class="eyebrow">● About · Gangtok, Sikkim</span>
-    <h1 style="margin-top:14px;">A little about me 🌸</h1>
-    <p class="tagline">Program manager by title, translator by trade, and a collector of cute stationery on the side.</p>
+    <dl class="bio" data-reveal>
+      <div><dt>Now</dt><dd>Senior Product Manager, Microsoft</dd></div>
+      <div><dt>Based in</dt><dd>Bengaluru</dd></div>
+      <div><dt>Studied at</dt><dd>IIM Kozhikode</dd></div>
+      <div><dt>From</dt><dd>Gangtok, Sikkim</dd></div>
+    </dl>
   </div>
 </header>
 
-<div class="bunting" aria-hidden="true">
-  <svg width="220" height="26" viewBox="0 0 220 26">
-    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
-    <polygon points="20,8 30,8 25,18" fill="var(--sky)"></polygon>
-    <polygon points="60,14 70,14 65,24" fill="var(--flame)"></polygon>
-    <polygon points="100,17 110,17 105,27" fill="var(--marigold)"></polygon>
-    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
-    <polygon points="180,8 190,8 185,18" fill="var(--sky)"></polygon>
-  </svg>
-</div>
-
-<!-- STORY -->
-<section id="story">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <div class="avatar">K</div>
-      <div class="pin">⛰ Gangtok, Sikkim</div>
+<!-- ================= STORY ================= -->
+<section id="story" class="section">
+  <div class="wrap story-grid">
+    <div data-reveal>
+      <p class="eyebrow">My story</p>
+      <h2>Hi, I'm Kalzang</h2>
     </div>
-    <div class="about-text reveal">
-      <span class="eyebrow">My story</span>
-      <h2 style="margin-top:10px;">Hi, I'm Kalzang 👋</h2>
-      <p>I'm a program manager who lives in the space between spreadsheets and sprint boards — between what engineers can build and what stakeholders actually need. My job is to make that space feel less like a gap and more like a bridge.</p>
+    <div class="story-text" data-reveal>
+      <p>I'm a product manager who lives in the space between spreadsheets and sprint boards — between what engineers can build and what stakeholders actually need. My job is to make that space feel less like a gap and more like a bridge.</p>
       <p>Originally from <strong>Gangtok, Sikkim</strong>, I grew up around a place where the line between two very different worlds — mountain and valley, old and new — was something you crossed every day without thinking about it. That's more or less the job now: finding clarity in complexity, and making sure the bridge between technical and non-technical teams feels like a conversation, not a negotiation.</p>
       <p>I care about good pedagogy, good UX, and never letting the "why" behind a product get lost in execution. Off the clock you'll find me in a cozy café with a milky tea, hoarding cute notebooks I'll absolutely use one day, and reorganizing a Notion workspace purely for fun.</p>
     </div>
   </div>
 </section>
 
-<!-- FACTS -->
-<section style="background:var(--cloud); padding-top:40px;">
+<!-- ================= FACTS ================= -->
+<section class="section section--tint facts">
   <div class="wrap">
-    <div class="fact-grid">
-      <div class="fact-card reveal">
-        <h3><span>☕</span> Currently</h3>
+    <ul class="fact-grid">
+      <li class="fact-card" data-reveal>
+        <h3>Currently</h3>
         <ul>
           <li>Reading: Atomic Habits</li>
           <li>Learning: AI product management</li>
           <li>Mood: Calm &amp; planning</li>
         </ul>
-      </div>
-      <div class="fact-card reveal">
-        <h3><span>🌸</span> Personal philosophy</h3>
+      </li>
+      <li class="fact-card" data-reveal>
+        <h3>Personal philosophy</h3>
         <p>Kindness, clarity, and reliable execution build stronger teams than unnecessary complexity ever will.</p>
-      </div>
-      <div class="fact-card reveal">
-        <h3><span>🧭</span> What I'm great at</h3>
+      </li>
+      <li class="fact-card" data-reveal>
+        <h3>What I'm great at</h3>
         <p>Taking a tense, jargon-heavy room and leaving everyone aligned on one plan they actually believe in.</p>
-      </div>
-      <div class="fact-card reveal">
-        <h3><span>🎀</span> Little joys</h3>
+      </li>
+      <li class="fact-card" data-reveal>
+        <h3>Little joys</h3>
         <p>Pastel sticky notes, a clean backlog, mountain mornings, and a game that loads in under a second.</p>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-<div class="bunting" aria-hidden="true">
-  <svg width="220" height="26" viewBox="0 0 220 26">
-    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
-    <polygon points="20,8 30,8 25,18" fill="var(--moss)"></polygon>
-    <polygon points="60,14 70,14 65,24" fill="var(--sky)"></polygon>
-    <polygon points="100,17 110,17 105,27" fill="var(--flame)"></polygon>
-    <polygon points="140,14 150,14 145,24" fill="var(--marigold)"></polygon>
-    <polygon points="180,8 190,8 185,18" fill="var(--moss)"></polygon>
-  </svg>
-</div>
-
-<!-- TRANSLATION STATION -->
-<section id="bridge">
+<!-- ================= TRANSLATION STATION ================= -->
+<section id="bridge" class="section">
   <div class="wrap">
-    <div class="section-head reveal" style="max-width:680px;">
-      <span class="eyebrow">The bridge, live</span>
+    <div class="section-head ts-head" data-reveal>
+      <p class="eyebrow">The bridge, live</p>
       <h2>The Translation Station</h2>
       <p>This is the heart of what I do — the same project, told two ways. Flip the switch to see how I translate between engineer-speak and human-speak.</p>
       <div class="ts-toggle" role="group" aria-label="Toggle description language">
-        <button id="tsHuman" class="active" type="button">🧸 Human speak</button>
-        <button id="tsTech" class="tech" type="button">👩‍💻 Engineer speak</button>
+        <button id="tsHuman" type="button" aria-pressed="true">Human speak</button>
+        <button id="tsTech" class="tech" type="button" aria-pressed="false">Engineer speak</button>
       </div>
     </div>
-    <div class="ts-list" id="tsList"></div>
+    <div class="ts-list" id="tsList" aria-live="polite"></div>
   </div>
 </section>
 
-<div class="bunting" aria-hidden="true">
-  <svg width="220" height="26" viewBox="0 0 220 26">
-    <path d="M0,4 Q110,26 220,4" fill="none" stroke="var(--rock)" stroke-width="2"></path>
-    <polygon points="20,8 30,8 25,18" fill="var(--flame)"></polygon>
-    <polygon points="60,14 70,14 65,24" fill="var(--marigold)"></polygon>
-    <polygon points="100,17 110,17 105,27" fill="var(--sky)"></polygon>
-    <polygon points="140,14 150,14 145,24" fill="var(--moss)"></polygon>
-    <polygon points="180,8 190,8 185,18" fill="var(--flame)"></polygon>
-  </svg>
-</div>
-
-<!-- MINI GAMES -->
-<section id="play" style="background:var(--cloud);">
+<!-- ================= MINI GAMES ================= -->
+<section id="play" class="section section--tint play">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Take a break</span>
-      <h2>A few more tiny games 🌼</h2>
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Take a break</p>
+      <h2>A few more tiny games</h2>
       <p>Quick, silly, and surprisingly on-brand. No score, no pressure — just stay a while.</p>
     </div>
-    <div class="game-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div class="game-grid game-grid--three">
 
-      <div class="game-card reveal">
-        <span class="eyebrow">☁️ guessing</span>
+      <div class="game-card" data-reveal>
+        <p class="eyebrow">guessing</p>
         <h3>Guess my priority</h3>
         <p class="game-desc">Type what you think every PM secretly optimizes for.</p>
+        <label class="visually-hidden" for="prioInput">Your guess</label>
         <input class="fun-input" id="prioInput" placeholder="e.g. communication" autocomplete="off">
-        <button class="btn btn-primary" id="prioBtn" type="button">Guess</button>
-        <div class="fun-out" id="prioOut"></div>
+        <div class="game-actions"><button class="btn btn-primary btn-sm" id="prioBtn" type="button">Guess</button></div>
+        <p class="fun-out" id="prioOut" aria-live="polite" hidden></p>
       </div>
 
-      <div class="game-card reveal">
-        <span class="eyebrow">🌸 fortune</span>
+      <div class="game-card" data-reveal>
+        <p class="eyebrow">fortune</p>
         <h3>Fortune petal</h3>
         <p class="game-desc">Click for a tiny work mantra to carry into your next meeting.</p>
-        <button class="btn btn-primary" id="petalBtn" type="button">Reveal a petal</button>
-        <div class="fun-out" id="petalOut"></div>
+        <div class="game-actions"><button class="btn btn-primary btn-sm" id="petalBtn" type="button">Reveal a petal</button></div>
+        <p class="fun-out" id="petalOut" aria-live="polite" hidden></p>
       </div>
 
-      <div class="game-card reveal">
-        <span class="eyebrow">🧩 translator</span>
+      <div class="game-card" data-reveal>
+        <p class="eyebrow">translator</p>
         <h3>Stakeholder translator</h3>
         <p class="game-desc">Turn engineer-speak into business-speak, one click at a time.</p>
-        <button class="btn btn-primary" id="transBtn" type="button">Translate</button>
-        <div class="fun-out" id="transOut"></div>
+        <div class="game-actions"><button class="btn btn-primary btn-sm" id="transBtn" type="button">Translate</button></div>
+        <p class="fun-out" id="transOut" aria-live="polite" hidden></p>
       </div>
 
     </div>
 
-    <p style="text-align:center; margin-top:26px;">
+    <p class="play-more">
       <a href="index.html#play" class="btn btn-secondary">← Back to the arcade games</a>
     </p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer id="contact">
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="contact">
   <div class="wrap">
-    <div class="foot-row">
-      <div>
-        <span class="eyebrow" style="color:var(--marigold);">Say hello</span>
-        <h2 style="margin-top:10px;">Let's build a bridge together.</h2>
+    <div class="contact-grid">
+      <div class="contact-main" data-reveal>
+        <p class="eyebrow">Say hello</p>
+        <h2>Let's build a bridge together.</h2>
         <p>Open to program management roles and consulting — especially teams that need someone fluent in both engineering and everyone else.</p>
-        <a href="mailto:kalzang@example.com" class="btn btn-primary" style="margin-top:18px;">kalzang@example.com</a>
+        <!-- TODO(owner): placeholder address; replace with the real one. -->
+        <a href="mailto:kalzang@example.com" class="btn btn-primary contact-cta" data-pop>kalzang@example.com</a>
       </div>
-      <div class="foot-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">Resume (PDF)</a>
-        <a href="#">Twitter / X</a>
+      <div class="contact-desk" data-scene="contact">
+        <div class="desk-blocks" aria-hidden="true">
+          <span class="desk-block desk-block--lav"></span>
+          <span class="desk-block desk-block--sage"></span>
+          <span class="desk-block desk-block--key"></span>
+          <span class="desk-block desk-block--blush"></span>
+        </div>
+        <button class="poke-note" id="pokeNote" type="button" aria-describedby="pokeHint">
+          <span class="poke-note-text">Alignment beats heroics. Take a breath.</span>
+        </button>
+        <p class="visually-hidden" id="pokeHint">Press to squish. Drag, or use the arrow keys, to move it.</p>
       </div>
     </div>
+    <nav class="foot-links" aria-label="Elsewhere">
+      <!-- TODO(owner): real LinkedIn, résumé PDF and X links. -->
+      <a class="ink-link" href="#">LinkedIn</a>
+      <a class="ink-link" href="#">Resume (PDF)</a>
+      <a class="ink-link" href="#">Twitter / X</a>
+    </nav>
     <div class="foot-bottom">
-      <span>Kalzang — Program Manager, Gangtok, Sikkim</span>
+      <svg class="foot-peaks" viewBox="0 0 220 40" aria-hidden="true" focusable="false"><path d="M2 38 52 8l22 16 30-22 42 30 20-12 52 18"/></svg>
+      <span>Kalzang · Senior Product Manager, Microsoft, Bengaluru · From Gangtok, Sikkim</span>
       <span>Made with 🧋 from Gangtok to the tech world.</span>
     </div>
   </div>
 </footer>
 
-<!-- CUTE STICKER -->
-<div class="sticker" id="sticker">
-  <span>🐼</span>
-  <span>Alignment beats heroics. Take a breath.</span>
-  <button class="x" id="stickerClose" aria-label="Dismiss note">×</button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>

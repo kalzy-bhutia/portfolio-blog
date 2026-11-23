@@ -1,0 +1,113 @@
+/* =========================================================
+   Design tokens: the single source for colour, type, space,
+   shape, shadow and motion. Every other stylesheet and the
+   JS motion helpers (js/motion/tokens.js) read from here.
+   Direction B, "Block bridge".
+   ========================================================= */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/bricolage-grotesque-wght.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter-wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/jetbrains-mono-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('../assets/fonts/caveat-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Colour ---------- */
+  --c-canvas: #F6F3EE;        /* warm ivory page */
+  --c-paper: #FCFBF8;         /* raised surfaces */
+  --c-ink: #25252B;           /* text, 13.8:1 on canvas */
+  --c-ink-soft: #585862;      /* secondary text, 6.4:1 on canvas */
+  --c-line: #E2DDD5;          /* hairlines */
+  --c-blush: #F1C9CF;
+  --c-lavender: #C9C4EC;
+  --c-sage: #B5CFC0;
+  --c-butter: #F4D97A;
+  --c-accent: #D2381F;        /* vermilion: CTAs and key moments only */
+  --c-accent-deep: #8E2412;   /* pressed edge under accent buttons */
+  --c-on-accent: #FFFFFF;     /* 4.85:1 on accent */
+  --c-focus: #2A50C8;
+
+  /* clay gradient stops: light from the top left */
+  --clay-hi: rgba(255, 255, 255, .55);
+  --clay-lo: rgba(37, 37, 43, .14);
+
+  /* ---------- Type ---------- */
+  --f-display: 'Bricolage Grotesque', 'Avenir Next', system-ui, sans-serif;
+  --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --f-hand: 'Caveat', 'Bradley Hand', 'Segoe Print', cursive;
+
+  --t-xs: .75rem;
+  --t-sm: .875rem;
+  --t-md: 1rem;
+  --t-lg: 1.1875rem;
+  --t-xl: clamp(1.35rem, 1.1rem + 1vw, 1.65rem);
+  --t-2xl: clamp(1.9rem, 1.4rem + 2.2vw, 2.9rem);
+  --t-hero: clamp(3rem, 1.6rem + 6.4vw, 6.25rem);
+  --measure: 66ch;
+
+  /* ---------- Space (4px base) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --maxw: 1160px;
+
+  /* ---------- Shape ---------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+  --border: 1px solid var(--c-line);
+  --border-ink: 1.5px solid var(--c-ink);
+
+  /* ---------- Shadow ---------- */
+  /* One light source (top left) for the whole site. */
+  --sh-sm: 0 1px 0 rgba(255,255,255,.8) inset, 2px 4px 10px -4px rgba(42,36,64,.18);
+  --sh-md: 0 1px 0 rgba(255,255,255,.8) inset, 4px 12px 28px -14px rgba(42,36,64,.28);
+  --sh-lg: 0 1px 0 rgba(255,255,255,.8) inset, 8px 24px 48px -22px rgba(42,36,64,.34);
+  /* clay recipe for HTML elements: inner highlight + inner shade + drop */
+  --sh-clay:
+    inset 3px 4px 6px var(--clay-hi),
+    inset -4px -6px 10px var(--clay-lo),
+    4px 10px 20px -10px rgba(42,36,64,.35);
+
+  /* ---------- Motion ---------- */
+  --dur-xs: 120ms;
+  --dur-sm: 200ms;
+  --dur-md: 360ms;
+  --dur-lg: 600ms;
+  --dur-xl: 900ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-in-out: cubic-bezier(.6, 0, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.4, .64, 1);   /* low bounce, ~ back.out(1.4) */
+  --stagger: 60ms;
+  --press-scale: .96;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-xs: 0ms; --dur-sm: 0ms; --dur-md: 0ms; --dur-lg: 0ms; --dur-xl: 0ms;
+    --stagger: 0ms; --press-scale: 1;
+  }
+}
