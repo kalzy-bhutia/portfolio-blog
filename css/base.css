@@ -1,0 +1,332 @@
+/* =========================================================
+   Base: reset, type, layout shell, nav, buttons, links,
+   reveal states. Reads tokens from tokens.css.
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 88px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--c-canvas);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  font-size: var(--t-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  /* faint paper grain, one tiny inline SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .13 0 0 0 0 .1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  margin: 0;
+  text-wrap: balance;
+}
+h2 { font-size: var(--t-2xl); }
+h3 { font-size: var(--t-xl); letter-spacing: -.02em; line-height: 1.15; }
+h4 { font-size: var(--t-lg); letter-spacing: -.01em; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--maxw) + 2 * var(--s-6));
+  margin-inline: auto;
+  padding-left: max(var(--s-5), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--s-5), env(safe-area-inset-right, 0px));
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--s-4);
+  top: -100px;
+  z-index: 100;
+  background: var(--c-ink);
+  color: var(--c-canvas);
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip-link:focus { top: var(--s-3); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ---------- Small type roles ---------- */
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--c-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.eyebrow::before {
+  content: "";
+  width: 14px; height: 10px;
+  border-radius: 3px;
+  background: var(--c-accent);
+  box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 3px rgba(0,0,0,.18);
+}
+.hand {
+  font-family: var(--f-hand);
+  font-weight: 600;
+  color: var(--c-accent);
+}
+
+/* ---------- Section shell ---------- */
+.section { padding-block: clamp(72px, 9vw, 128px); }
+.section--tint { background: rgba(201, 196, 236, .22); }
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  max-width: 640px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+.section-head p:not(.eyebrow) { color: var(--c-ink-soft); font-size: var(--t-lg); max-width: 56ch; }
+
+/* ---------- Nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 243, 238, .86);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-md) var(--ease-out);
+}
+.site-nav.is-scrolled { border-bottom-color: var(--c-line); }
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: var(--s-4);
+}
+.logo {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -.03em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.logo-mark {
+  width: 22px; height: 22px;
+  border-radius: 7px;
+  background: var(--c-accent);
+  box-shadow: var(--sh-clay);
+  display: inline-block;
+}
+.navlinks {
+  display: flex;
+  gap: clamp(16px, 2.4vw, 30px);
+  list-style: none;
+  align-items: center;
+}
+.navlinks a {
+  text-decoration: none;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-ink-soft);
+  padding-block: var(--s-2);
+  transition: color var(--dur-sm) var(--ease-out);
+}
+.navlinks a:hover, .navlinks a[aria-current="page"] { color: var(--c-ink); }
+.nav-toggle {
+  display: none;
+  background: var(--c-paper);
+  border: var(--border);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  padding: 10px 16px;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  min-height: 44px;
+  align-items: center;
+  gap: var(--s-2);
+}
+.nav-toggle-bars { display: inline-flex; flex-direction: column; gap: 4px; }
+.nav-toggle-bars span {
+  display: block; width: 16px; height: 2px; border-radius: 2px; background: var(--c-ink);
+  transition: transform var(--dur-sm) var(--ease-out), opacity var(--dur-sm) var(--ease-out);
+}
+.site-nav.is-open .nav-toggle-bars span:first-child { transform: translateY(3px) rotate(45deg); }
+.site-nav.is-open .nav-toggle-bars span:last-child { transform: translateY(-3px) rotate(-45deg); }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: inline-flex; }
+  .navlinks {
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--c-canvas);
+    border-bottom: var(--border);
+    padding: var(--s-2) max(18px, env(safe-area-inset-left, 0px)) var(--s-5);
+    box-shadow: var(--sh-md);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity var(--dur-sm) var(--ease-out), transform var(--dur-sm) var(--ease-out), visibility 0s linear var(--dur-sm);
+  }
+  .site-nav.is-open .navlinks {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity var(--dur-sm) var(--ease-out), transform var(--dur-sm) var(--ease-out);
+  }
+  .navlinks a { display: block; font-size: var(--t-lg); padding: 14px 0; border-bottom: var(--border); }
+  .navlinks li:last-child a { border-bottom: 0; }
+}
+
+/* ---------- Ink underline links (AnimatedUnderline, CSS half) ---------- */
+.ink-link { position: relative; text-decoration: none; }
+.ink-link::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -2px;
+  height: 7px;
+  background: var(--c-accent);
+  -webkit-mask: url("../assets/ink-underline.svg") center / 100% 100% no-repeat;
+  mask: url("../assets/ink-underline.svg") center / 100% 100% no-repeat;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--dur-md) var(--ease-out);
+}
+.ink-link:hover::after,
+.ink-link:focus-visible::after,
+.ink-link[aria-current="page"]::after { clip-path: inset(0 0 0 0); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.2;
+  min-height: 48px;
+  padding: 13px 22px;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  transition: transform var(--dur-sm) var(--ease-spring), box-shadow var(--dur-sm) var(--ease-out), background-color var(--dur-sm) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary {
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+  box-shadow: inset 2px 3px 4px rgba(255,255,255,.28), inset -2px -3px 6px rgba(0,0,0,.2), 0 4px 0 var(--c-accent-deep), 0 10px 18px -10px rgba(142,36,18,.6);
+}
+.btn-secondary {
+  background: var(--c-paper);
+  color: var(--c-ink);
+  box-shadow: inset 0 0 0 1.5px var(--c-ink), 0 3px 0 var(--c-ink);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translateY(-2px); }
+}
+.btn:active { transform: translateY(2px) scale(var(--press-scale)); }
+.btn-primary:active { box-shadow: inset 2px 3px 4px rgba(255,255,255,.2), inset -2px -3px 6px rgba(0,0,0,.24), 0 1px 0 var(--c-accent-deep); }
+.btn-secondary:active { box-shadow: inset 0 0 0 1.5px var(--c-ink), 0 1px 0 var(--c-ink); }
+.btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.btn-sm { min-height: 44px; padding: 10px 18px; font-size: .88rem; }
+
+/* ---------- Pills and tags ---------- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  padding: 7px 12px 7px 10px;
+  border-radius: var(--r-pill);
+  background: var(--c-paper);
+  box-shadow: inset 0 0 0 1px var(--c-line), var(--sh-sm);
+}
+.status-pill .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(210, 56, 31, .16);
+}
+.tag {
+  font-family: var(--f-mono);
+  font-size: .7rem;
+  letter-spacing: .02em;
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  background: var(--c-canvas);
+  box-shadow: inset 0 0 0 1px var(--c-line);
+  color: var(--c-ink-soft);
+}
+
+/* SpringCard (js/motion/spring-card.js) */
+.spring-card {
+  transition: transform var(--dur-md) var(--ease-spring), box-shadow var(--dur-md) var(--ease-out);
+  will-change: transform;
+}
+.spring-card:hover { box-shadow: var(--sh-lg); }
+
+/* ---------- Clay SVG objects (shared) ---------- */
+.clay-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.clay svg, svg.clay { overflow: visible; }
+
+/* ---------- Quiet reveal (Reveal helper) ----------
+   Hidden states exist only under html.motion, which a head
+   script sets when JS runs and reduced motion is off, so the
+   page is always readable without JS. */
+.motion [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--dur-lg) var(--ease-out), transform var(--dur-lg) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+.motion [data-reveal].is-in { opacity: 1; transform: none; }
